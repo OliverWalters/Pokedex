@@ -1,2 +1,2 @@
 # Pokedex
-Pokedex de Oli y Vero
+Pokedex de Oli, Vero y Alberto.
