@@ -37,14 +37,27 @@ body {
   .centrado{
     margin: auto;
   }
-  .progress {
-  
-}
- 
-.progress-bar {
 
+.progress {
+  height: 15px;
+  width: 100%;
+  border: 1px solid #428bca;
+  border-radius: 5px;
+  background-color: #ffffff;
+  margin-bottom: 15px;
 }
- 
+
+.progress-bar {
+  height: 100%;
+  background: #0088ff;
+  display:block;
+  align-items: center;
+  
+  border-radius: 5px;
+}
+
 .progress-bar-text {
- 
+  margin-left: 10px;
+  font-weight: bold;
+  color: #000000;
 }
