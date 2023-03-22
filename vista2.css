@@ -71,3 +71,8 @@ body {
   text-align: center;
   
 }
+.evoluciones{
+  display: flex;
+  justify-content: center;
+  
+}
