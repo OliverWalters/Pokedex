@@ -1,5 +1,6 @@
 body {
-  background-image: url("Recursos/a.png");
+  background-image: url("Imgenes/fondo.png");
+ 
 }
 
 h1 {
@@ -13,6 +14,7 @@ h1 {
     src: url('Recursos\FuenteTituloPokedex\Pokemon-Solid.ttf') format('truetype');
     font-style: normal;
     font-weight: normal;
+    color: yellow;
   }
 }
 
