@@ -34,10 +34,10 @@ table, tr, th, td{
   
 }
 .tipodepokemon{
-  height: 25px;
-  width: 15%;
-  border: 1px solid #428bca;
-  border-radius: 5px;
+  height: 35px;
+  width: 105px;
+  font-family: 'Courier New', Courier, monospace;
+ border-radius: 10px;
   background-color: #ff0000;
   margin: 0px auto 20px auto;
  
@@ -77,5 +77,16 @@ margin-bottom: 15px;
 }
 .descripcion{
 text-align: center;
+margin: 0px auto 20px auto;
+border-color: rgb(102, 204, 255);
+height: 350px;
+width: 700px;
+border-radius: 5px;
 
+}
+
+.principio{
+  text-align: center;
+  margin: 0px auto 20px auto;
+ 
 }
