@@ -1,0 +1,51 @@
+body {
+
+}
+
+h1 {
+  color: rgb(0, 0, 0);
+  text-align: center;
+  font-size: 70px;
+}
+.titulo{
+  @font-face {
+    font-family: 'Pokedex';
+    src: url('Recursos\FuenteTituloPokedex\Pokemon-Solid.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+  }
+}
+
+
+.grid-container {
+  display: grid;
+  grid-auto-columns: repeat(auto-fill, auto);
+  background-color: #7b7b7be9;
+  padding: 10px;
+  width: 85%;
+  margin:auto;
+}
+
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.914);
+  margin: 5px;
+  padding: 20px;
+  text-align: center;
+  border: solid 0;
+  border-radius: 50px;
+  max-width: 300px;
+}
+
+.centrado{
+  margin: auto;
+}
+
+.ImagenPokemons{
+  width: 100%;
+  border: solid 0;
+  border-radius: 40px;
+}
+
+/*@media {min-width: } {
+  
+}*/
