@@ -1,5 +1,9 @@
+
 body {
-   
+  background-image: url("Imgenes/fondo1.png");
+background-size: 1600px;
+background-position:top;
+background-repeat: no-repeat;   
 }
 
 h1 {
@@ -7,7 +11,9 @@ h1 {
   text-align: center;
   font-size: 70px;
 }
-
+h5{
+  
+}
 
 
 .grid-container {
@@ -42,8 +48,19 @@ table, tr, th, td{
   margin: 0px auto 20px auto;
  
  }
-.centrado{
+ .principio{
+  text-align: center;
+  font-size: 62px;
+  margin: 0px auto 20px auto;
+ 
+}
+.imagen-pokemon-e-informacion{
+  
+}
+.imagen-pokemon{
   margin: auto;
+  height: 600px;
+  width:600px;
 }
 
 .progress {
@@ -85,8 +102,4 @@ border-radius: 5px;
 
 }
 
-.principio{
-  text-align: center;
-  margin: 0px auto 20px auto;
- 
-}
+
