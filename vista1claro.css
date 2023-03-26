@@ -5,22 +5,28 @@ background-position:top;
 background-repeat: no-repeat;
 }
 
-h1 {
-  color: rgb(0, 0, 0);
+@font-face {
+  font-family: Pokedex1;
+  src: url('Recursos/FuenteTituloPokedex/Pokemon\ Hollow.ttf');
+}
+@font-face {
+  font-family: Pokedex2;
+  src: url('Recursos/FuenteTituloPokedex/Pokemon\ Solid.ttf');
+}
+
+.titulo {
+  font-family: Pokedex2 ;
+  color: rgba(255, 255, 0, 0.963);
+  -webkit-text-stroke: 2px blue;
+  margin:0;
+  padding: 0;
+  letter-spacing: 7px;
   text-align: center;
-  font-size: 70px;
-}
-.titulo{
-  @font-face {
-    font-family: 'Pokedex';
-    src: url('Recursos/FuenteTituloPokedex/Pokemon-Solid.ttf') format('truetype');
-    font-style: normal;
-    font-weight: normal;
-  }
+  font-size: 62px;
+  
 }
 
-
-.grid-container {
+.lista-pokemon {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
   background-color: #7b7b7b00;
@@ -30,7 +36,7 @@ h1 {
   margin-top: 100px;
 }
 
-.grid-item {
+.pokemon {
   background-color: rgba(255, 255, 255, 0.914);
   margin: auto;
   margin-top: 70px;
@@ -47,11 +53,17 @@ h1 {
   margin: auto;
 }
 
-.ImagenPokemons{
+.imagen-pokemons{
   width: 300px;
   height: 300px;
   border: solid 0;
   border-radius: 40px;
+}
+
+.buscador{
+  margin-top: 0px;
+  max-width: 40%;
+  min-width: 220px;
 }
 
 .grid-item:hover{
