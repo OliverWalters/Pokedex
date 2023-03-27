@@ -66,6 +66,11 @@ background-repeat: no-repeat;
   min-width: 220px;
 }
 
-.grid-item:hover{
 
+
+.numero-pokemons{
+ border: solid 0;
+ border-radius: 25%;
+ background-color: rgb(221, 221, 221);
+ padding: 3px;
 }
