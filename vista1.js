@@ -10,11 +10,15 @@ fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
 }
 
 function mostrarPokemon(pokemon){ /*datos de un pokemon*/
+    
+let tipos = pokemon.types.map(type => `<span class="${type.type.name} tipos"> ${type.type.name}</span>`);
+tipos = tipos.join(''); 
+
 const div = document.createElement("div");
 div.classList.add("pokemon");
 div.innerHTML = `<img src="${pokemon.sprites.other["official-artwork"].front_default}" class="imagen-pokemons" alt="ImagenPokemons">
                 <p><span class="numero-pokemons">N&deg; ${(pokemon.id.toString().padStart(3,0))}</span>  ${pokemon.name}</p>
-                <p>Tipo del pok&eacute;mon</p>`;
+                ${tipos}`;
 listaPokemon[0].append(div);
 }
 
