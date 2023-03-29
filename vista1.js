@@ -11,8 +11,30 @@ fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
 }
 
 function mostrarPokemon(pokemon){ /*datos de un pokemon*/
-    
-let tipos = pokemon.types.map(type => `<span class="${type.type.name} tipos"> ${type.type.name.charAt(0).toUpperCase() + type.type.name.slice(1)}</span>`);
+const tiposTraducidos = {
+    normal: 'normal',
+    fire: 'fuego',
+    water: 'agua',
+    electric: 'eléctrico',
+    grass: 'planta',
+    ice: 'hielo',
+    fighting: 'lucha',
+    poison: 'veneno',
+    ground: 'tierra',
+    flying: 'volador',
+    psychic: 'psíquico',
+    bug: 'bicho',
+    rock: 'roca',
+    ghost: 'fantasma',
+    dragon: 'dragón',
+    dark: 'siniestro',
+    steel: 'acero',
+    fairy: 'hada'
+  };
+
+
+
+let tipos = pokemon.types.map(type => `<span class="${type.type.name} tipos"> ${tiposTraducidos[type.type.name].charAt(0).toUpperCase() + tiposTraducidos[type.type.name].slice(1)}</span>`);
 tipos = tipos.join(''); 
 
 const div = document.createElement("div");

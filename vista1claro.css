@@ -68,9 +68,11 @@ background-repeat: no-repeat;
 .buscador{
   margin-left: 10px;
   position: absolute;
-  top: 168px;
-  max-width: 38%;
-  min-width: 100px;
+  top: 150px;
+  max-width: 30%;
+  min-width: 220px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(111px,1fr));
 }
 .texto-buscador{
   font-size: 20px;
@@ -81,18 +83,21 @@ background-repeat: no-repeat;
   padding-left: 5px;
   width: 150px;
   border-radius: 10px;
+  margin: 5px 0 5px 0;
+  
 }
 .submit-buscador{
-  color: rgb(0, 0, 0);
-  background-color: yellow;
-  border: solid blue;
-  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0);
+  border:0;
+}
+.imagen-submit{
+  width: 35px;
 }
 
 
 .numero-pokemons{
  border: solid 0;
- border-radius: 15%;
+ border-radius: 7px;
  background-color: rgb(221, 221, 221);
  padding: 3px;
 }
@@ -100,7 +105,7 @@ background-repeat: no-repeat;
 .tipos{
   padding: 5px 20px 8px 20px;
   border: solid 0;
-  border-radius: 15%;
+  border-radius: 10px;
   margin: 0 10px 0 10px;
   text-align: center;
 }
