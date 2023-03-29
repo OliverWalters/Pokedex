@@ -46,7 +46,12 @@ background-repeat: no-repeat;
   border-radius: 50px;
   max-width: 300px;
   box-shadow: 0 0 30px 3px;
-  transition: 2s;
+  transition: 0.5s;
+  height: 400px;
+}
+.pokemon:hover{
+  box-shadow: 0 0 80px 20px orange;
+  height: 420px;
 }
 
 .centrado{
@@ -61,11 +66,28 @@ background-repeat: no-repeat;
 }
 
 .buscador{
-  margin-top: 0px;
-  max-width: 40%;
-  min-width: 220px;
+  margin-left: 10px;
+  position: absolute;
+  top: 168px;
+  max-width: 38%;
+  min-width: 100px;
 }
-
+.texto-buscador{
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+}
+.input-buscador{
+  padding-left: 5px;
+  width: 150px;
+  border-radius: 10px;
+}
+.submit-buscador{
+  color: rgb(0, 0, 0);
+  background-color: yellow;
+  border: solid blue;
+  border-radius: 10px;
+}
 
 
 .numero-pokemons{
@@ -73,13 +95,6 @@ background-repeat: no-repeat;
  border-radius: 15%;
  background-color: rgb(221, 221, 221);
  padding: 3px;
-}
-
-
-
-.mayus::first-letter{
-  text-transform: uppercase;
-
 }
 
 .tipos{
