@@ -39,7 +39,6 @@ background-repeat: no-repeat;
 .pokemon {
   background-color: rgba(255, 255, 255, 0.914);
   margin: auto;
-  margin-top: 70px;
   padding: 20px;
   text-align: center;
   border: solid 0;
@@ -100,6 +99,13 @@ background-repeat: no-repeat;
  border-radius: 7px;
  background-color: rgb(221, 221, 221);
  padding: 3px;
+}
+
+.boton{
+  margin-top: 70px;
+  border: solid 0;
+  border-radius: 50px;
+  background-color: transparent;
 }
 
 .tipos{
