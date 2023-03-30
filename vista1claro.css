@@ -48,6 +48,11 @@ background-repeat: no-repeat;
   transition: 0.5s;
   height: 400px;
 }
+
+.grid-item-pokemon{
+  margin: auto;
+}
+
 .pokemon:hover{
   box-shadow: 0 0 80px 20px orange;
   height: 420px;

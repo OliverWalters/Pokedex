@@ -36,6 +36,7 @@ let tipos = pokemon.types.map(type => `<span class="${type.type.name} tipos"> ${
 tipos = tipos.join(''); 
 
 const div = document.createElement("div");
+div.classList.add("grid-item-pokemon");
 div.innerHTML = `<button type="button" class="boton" onclick= redireccion(${pokemon.id})>
                 <div class="pokemon">
                 <img src="${pokemon.sprites.other["official-artwork"].front_default}" class="imagen-pokemons" alt="ImagenPokemons">
