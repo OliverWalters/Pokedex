@@ -1,13 +1,13 @@
 const listaPokemon = document.getElementById("lista-pokemon");
 
-for(let i = 1; i <= 151; i++){
-datosPokemons(i);
-}
+datosPokemons();
 
-function datosPokemons(id){
-fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
-.then(datos => datos.json())
-.then(resultado => mostrarPokemon(resultado))
+async function datosPokemons() {
+  for(let i = 1; i <= 151; i++){
+    await fetch(`https://pokeapi.co/api/v2/pokemon/${i}`)
+      .then(datos => datos.json())
+      .then(resultado => mostrarPokemon(resultado))
+    }
 }
 
 function mostrarPokemon(pokemon){ /*datos de un pokemon*/

@@ -14,15 +14,17 @@ h1 {
 
 .general {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(500px,1fr));
+  grid-template-columns: repeat(auto-fill, minmax(570px,1fr));
  
 }
 
  .principio{
   text-align: center;
   font-size: 62px;
-  margin: 100px auto 200px auto;
- 
+  margin: 62px auto 220px auto;
+}
+.subclass-principio{
+  margin:0 auto 0 auto;
 }
 .imagen{
   margin: auto;
@@ -30,8 +32,8 @@ h1 {
 }
 .imagen-pokemon{
   margin: auto;
-  height: 500px;
-  width:500px;
+  height: 530px;
+  width:530px;/*hay que poner en porcentaje*/
 }
 .descripcion{
   display: grid;
@@ -43,14 +45,13 @@ h1 {
   padding: 20px 0 0 30px;
   font-size:x-large;
   height: 300px;
-  width: 500px;
+  width: 80%;
   margin-bottom: 30px;
-  
+  margin:auto;
 }
 .tipodepokemon{
   font-size: x-large;
-  margin-bottom: 20px;
-
+  margin: 15px 0 20px 10%;
 }
 .barras{
   background-color: grey;
@@ -59,16 +60,16 @@ h1 {
   padding: 20px;
   margin: 40px;
   background-image: linear-gradient(to bottom right, rgb(3, 3, 88) ,rgb(30, 169, 224));
-
+  padding-top:40px;
+  height: 280px;
 }
 
 .progress {
 height: 25px;
-width: 45%;
+width: 84%;
 border: 0px solid #000000;
 border-radius: 5px;
 background-color: #ffffff;
-
 margin:0 auto 20px auto;
 }
 
@@ -95,5 +96,74 @@ margin-bottom: 15px;
 
 }
 
+.evoluciones{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px,1fr));
+}
+.evolucion{
+  margin: auto;
+  color:black;
+}
+.mismoPokemon{
+  margin: auto;
+  color:blue;
+}
 
 
+
+.tipos{
+  padding: 5px 20px 8px 20px;
+  border: solid 0;
+  border-radius: 10px;
+  margin: 0 10px 0 10px;
+  text-align: center;
+  color: white;
+}
+.normal{
+  background-color:  rgb(221, 221, 221);
+}
+.grass{
+background-color: rgb(45, 172, 45);;
+}
+.fire{
+background-color: red ;
+}
+.flying{
+background-color: rgb(35, 163, 227);
+}
+.water{
+background-color: blue;
+}
+.bug{
+background-color: rgb(67, 204, 67);
+}
+.poison{
+background-color: rgb(180, 7, 248);
+}
+.electric{
+background-color: yellow;
+}
+.ground{
+background-color: brown;
+}
+.fairy{
+background-color: rgb(255, 0, 221);
+}
+.fighting{
+background-color: orange;
+}
+.psychic{
+background-color: rgb(208, 0, 118);
+}
+.rock{
+background-color: rgb(136, 132, 100);
+}
+.ice{
+background-color: aqua;
+}
+.ghost{
+background-color: rgb(68, 8, 124);
+}
+.dragon{
+background-color: rgb(3, 3, 138);
+}
