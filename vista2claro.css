@@ -120,10 +120,6 @@ h1 {
   
 }
 
-.grid-item {
-  margin: auto;
-}
-
 .tituloEvol{
   text-align: center;
   font-size: 100px;
@@ -136,12 +132,12 @@ h1 {
   grid-template-columns: repeat(auto-fill, minmax(240px,1fr));
   margin-bottom: 100px;
   margin: 30px 50px 100px 50px;
-  background-image: linear-gradient(to bottom right, rgb(220, 220, 220) ,rgb(109, 109, 109));
+  background-image: linear-gradient(to bottom right, rgb(102, 101, 101) ,rgb(196, 194, 194));
   padding: 50px 50px 50px 50px;
   border-radius: 40px;
 }
 
-.pokemonEvolucion{
+.pokemonEvolucion{/**/
   margin:auto;
 }
 
