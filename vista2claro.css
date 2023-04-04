@@ -12,12 +12,6 @@ h1 {
   font-size: 70px;
 }
 
-.general {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(570px,1fr));
- 
-}
-
  .principio{
   text-align: center;
   font-size: 62px;
@@ -26,71 +20,106 @@ h1 {
 .subclass-principio{
   margin:0 auto 0 auto;
 }
+.general {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(530px,1fr));
+  margin-bottom: 40px;
+}
 .imagen{
   margin: auto;
   padding-bottom: 30px;
+  
 }
 .imagen-pokemon{
   margin: auto;
-  height: 530px;
-  width:530px;/*hay que poner en porcentaje*/
+  height: 500px;
+  width:500px;
+  
 }
+
 .descripcion{
   display: grid;
-  background-color: #2274bd;
-  color: white;
-  grid-template-columns: auto  auto;
+  grid-template-columns: auto;
   border: solid 0;
   border-radius: 20px;
   padding: 20px 0 0 30px;
-  font-size:x-large;
-  height: 300px;
+  height: 80%;
   width: 80%;
+  margin-bottom: 15px; 
+}
+
+.texto{
+  border-radius: 35px 0px 35px 0px;
+  -moz-border-radius: 35px 0px 35px 0px;
+  -webkit-border-radius: 35px 0px 35px 0px;
+  padding: 20px 0 0 30px;
+  margin-bottom: 15px;
+  border: 2px solid #5878ca;
+  background-image: linear-gradient(to right,rgb(46, 122, 236),rgb(87, 178, 231),rgb(177, 224, 236));
+  text-align: center;
+  font-size: x-large;
+  width: 90%;
+  height: 60%; 
+ }
+  
+.descripcionYtipo{
+  margin: 40px;
+  height: 80%;
+  width: 100%;
+}
+
+.parrafo{
+  font-size: x-large;
+  margin-left: 5%;
   margin-bottom: 30px;
-  margin:auto;
+
 }
 .tipodepokemon{
   font-size: x-large;
-  margin: 15px 0 20px 10%;
+  margin: 0px 0 20px 10%;
 }
-.barras{
-  background-color: grey;
+.total-barras{
   border: solid 0;
-  border-radius: 15px;
-  padding: 20px;
-  margin: 40px;
-  background-image: linear-gradient(to bottom right, rgb(3, 3, 88) ,rgb(30, 169, 224));
-  padding-top:40px;
-  height: 280px;
+  border-radius: 30px;
+  width: 90%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-image: linear-gradient(to bottom right,rgb(201, 201, 201),rgb(151, 155, 156), rgb(60, 60, 65) );
+  margin: auto;
+}
+.myProgress {
+    
+  width: 85%;
+  height: 30px; 
+  border: solid 0;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  border-color: black;
+  background-color: white;
+  margin: 20px auto 20px auto;
 }
 
-.progress {
-height: 25px;
-width: 84%;
-border: 0px solid #000000;
-border-radius: 5px;
-background-color: #ffffff;
-margin:0 auto 20px auto;
+#myBar-hp,#myBar-attack,#myBar-defense,#myBar-special-attack,#myBar-special-defense,#myBar-speed{
+ 
+  width: 0%;
+  height: 100%;
+  border: solid 0;
+  border-radius: 20px;
+  padding-left: 10px;
+  
+  background-color: yellow;
+  transition: 3s;
 }
 
-.progress-bar {
-height: 100%;
-width: 80%;
-background: #f7f30e;
-display:block;
-align-items: center;
-margin-bottom: 25px;
-border-radius: 5px;
+#label-hp,#label-attack,#label-defense,#label-special-attack,#label-special-defense,#label-speed {
+  padding-left: 10px;
+  position: absolute;
+  line-height: 30px;
+  color: rgb(0, 0, 0);
+  font-size: large;
+  
 }
 
-.progress-bar-text {
-height: 50%;
-width: 100%;
-margin-left: 10px;
-font-weight: bold;
-color: #000000;
-margin-bottom: 15px;
-}
 .grid-item {
   margin: auto;
 
