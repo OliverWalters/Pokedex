@@ -114,7 +114,9 @@ background-repeat: no-repeat;
  background-color: rgb(221, 221, 221);
  padding: 3px;
 }
-
+.filtro{
+  display:none;
+}
 .tipos{
   padding: 5px 20px 8px 20px;
   font-weight: bold;

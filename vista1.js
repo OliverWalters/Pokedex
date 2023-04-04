@@ -51,7 +51,18 @@ listaPokemon.append(div);
 function redireccion(id){
   location.href = `PokedexVista2.html?id=${id}`;
 }
-
+document.addEventListener("keyup", e => {
+  if(e.target.matches("#buscador")){
+    document.querySelectorAll(".grid-item-pokemon").forEach(pokemon => {
+      if(pokemon.textContent.toLocaleLowerCase().includes(e.target.value)){
+        pokemon.classList.remove("filtro")
+      }
+      else{
+        pokemon.classList.add("filtro")
+      }
+    })
+  }
+})
 
 
 
