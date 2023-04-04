@@ -122,23 +122,77 @@ h1 {
 
 .grid-item {
   margin: auto;
+}
 
+.tituloEvol{
+  text-align: center;
+  font-size: 100px;
+  font-weight: bold;
+  margin: 60px auto 0 auto;
 }
 
 .evoluciones{
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px,1fr));
+  grid-template-columns: repeat(auto-fill, minmax(240px,1fr));
+  margin-bottom: 100px;
+  margin: 30px 50px 100px 50px;
+  background-image: linear-gradient(to bottom right, rgb(220, 220, 220) ,rgb(109, 109, 109));
+  padding: 50px 50px 50px 50px;
+  border-radius: 40px;
 }
+
+.pokemonEvolucion{
+  margin:auto;
+}
+
+.imgEvoluciones{
+  box-shadow: 0 0 30px 3px rgb(255, 255, 255);
+  transition: 0.5s;
+width: 80%;
+padding: 30px;
+background-color: rgba(255, 255, 255, 0.779);
+border-radius: 600px;
+}
+
+.imgEvoluciones:hover{
+  box-shadow: 0 0 80px 20px orange;
+}
+
+.boton{
+  border-radius: 600px;
+  all:unset;
+  cursor: pointer;
+}
+
 .evolucion{
+  margin-top:30px;
   margin: auto;
   color:black;
+  text-align: center;
+  font-size: xx-large;
 }
+
 .mismoPokemon{
+  margin-top:30px;
   margin: auto;
-  color:blue;
+  color:rgb(0, 208, 255);
+  text-align: center;
+  font-size: xx-large;
 }
 
+img.mismoPokemon{
+  background-image: linear-gradient(to bottom right, rgb(171, 255, 241) ,rgb(52, 109, 233));
+}
 
+.trigger{
+  color: white;
+  margin:auto;
+  text-align: center;
+  vertical-align:auto;
+  margin: 50px auto 50px auto;
+  font-size: x-large;
+  
+}
 
 .tipos{
   padding: 5px 20px 8px 20px;

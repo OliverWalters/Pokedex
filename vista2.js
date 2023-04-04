@@ -107,24 +107,41 @@ const evolucionesPokemons = document.getElementById("evoluciones");
 async function mostrarEvoluciones(datos){
   let pokemon = datos.chain;
 
-  do{
- 
-  await cadaEvolucion(pokemon.species.name);
+  while(pokemon != null){
+    let trigger = "";
 
-  pokemon = pokemon.evolves_to[0];
+    
+    if(pokemon.evolves_to[0] != null){
+      if(pokemon.evolves_to[0].evolution_details[0].trigger.name == "level-up"){
+        if(pokemon.evolves_to[0].evolution_details[0].min_level == null){
+          trigger = `Evoluciona al nivel ${pokemon.evolves_to[0].evolution_details[0].min_happiness} de felicidad`;
+        }
+        else{
+          trigger = `Evoluciona al nivel ${pokemon.evolves_to[0].evolution_details[0].min_level}`;
+        }
+      
+      }
+      else if(pokemon.evolves_to[0].evolution_details[0].trigger.name == "use-item"){
+        trigger =`Evoluciona con el item ${pokemon.evolves_to[0].evolution_details[0].item.name}`;
+      }
+    }
+    
 
-  }while(pokemon.evolves_to.Lenght != 0)
+    await cadaEvolucion(pokemon.species.name, trigger);
+    pokemon = pokemon.evolves_to[0];
+
+  }
 
 
 }
 
-async function cadaEvolucion(info){
+async function cadaEvolucion(info, trigger){
   await fetch(`https://pokeapi.co/api/v2/pokemon/${info}`)
   .then(datos => datos.json())
-  .then(resultado => mostrarCadaPokemon(resultado))
+  .then(resultado => mostrarCadaPokemon(resultado, trigger, id))
 }
 
-function mostrarCadaPokemon(info,id){
+function mostrarCadaPokemon(info, trigger, id){
 
   if(info.id <= 151){
     let clase;
@@ -136,16 +153,27 @@ function mostrarCadaPokemon(info,id){
       clase = "evolucion";
     }
 
+
     const div = document.createElement("div");
-
-    div.classList.add(clase);
-  
-    div.innerHTML = `
-                    <img src="${info.sprites.other["official-artwork"].front_default}">
-                    <p>${info.name.charAt(0).toUpperCase() + info.name.slice(1)}</p>
+    const div2 = document.createElement("div");
+    div.classList.add("pokemonEvolucion");
+    div2.classList.add("trigger");
+    div.innerHTML = `<button type="button" class="boton" onclick= redireccion(${info.id})>
+                    <img class="imgEvoluciones ${clase}" src="${info.sprites.other["official-artwork"].front_default}">
+                    </button>
+                    <br><br><br>
+                    <p class="${clase}">${info.name.charAt(0).toUpperCase() + info.name.slice(1)}</p>
                     `;
-
+    div2.innerHTML = `<p class="trigger">${trigger}</p>`
     
     evolucionesPokemons.append(div);
+    
+    if(trigger != ""){
+      evolucionesPokemons.append(div2)
+    }
    }
+}
+
+function redireccion(id){
+  location.href = `b.html?id=${id}`;
 }
