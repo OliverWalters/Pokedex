@@ -142,16 +142,18 @@ h1 {
 }
 
 .imgEvoluciones{
-  box-shadow: 0 0 30px 3px rgb(255, 255, 255);
+  /*box-shadow: 0 0 30px 3px rgb(0, 0, 0);*/
   transition: 0.5s;
 width: 80%;
 padding: 30px;
-background-color: rgba(255, 255, 255, 0.779);
+background-image: linear-gradient(to bottom right, rgb(102, 101, 101) ,rgb(196, 194, 194));
 border-radius: 600px;
+border:solid 4px rgb(255, 255, 255);
 }
 
 .imgEvoluciones:hover{
-  box-shadow: 0 0 80px 20px orange;
+  box-shadow: 0 0 80px 20px rgb(255, 255, 255);
+  /*box-shadow: 0 0 30px 3px rgb(255, 255, 255);*/
 }
 
 .boton{

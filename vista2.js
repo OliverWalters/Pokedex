@@ -141,12 +141,12 @@ async function cadaEvolucion(info, trigger){
   .then(resultado => mostrarCadaPokemon(resultado, trigger, id))
 }
 
-function mostrarCadaPokemon(info, trigger, id){
+function mostrarCadaPokemon(pokemon, trigger, id){
 
-  if(info.id <= 151){
+  if(pokemon.id <= 151){
     let clase;
 
-    if(info.id == id){
+    if(pokemon.id == id){
       clase = "mismoPokemon"; /*crear estas clases, y el grid*/
     }
     else{
@@ -158,11 +158,11 @@ function mostrarCadaPokemon(info, trigger, id){
     const div2 = document.createElement("div");
     div.classList.add("pokemonEvolucion");
     div2.classList.add("trigger");
-    div.innerHTML = `<button type="button" class="boton" onclick= redireccion(${info.id})>
-                    <img class="imgEvoluciones ${clase}" src="${info.sprites.other["official-artwork"].front_default}">
+    div.innerHTML = `<button type="button" class="boton" onclick= redireccion(${pokemon.id})>
+                    <img class="imgEvoluciones ${clase}" src="${pokemon.sprites.other["official-artwork"].front_default}">
                     </button>
                     <br><br><br>
-                    <p class="${clase}">${info.name.charAt(0).toUpperCase() + info.name.slice(1)}</p>
+                    <p class="${clase}">${pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</p>
                     `;
     div2.innerHTML = `<p class="trigger">${trigger}</p>`
     
@@ -175,5 +175,5 @@ function mostrarCadaPokemon(info, trigger, id){
 }
 
 function redireccion(id){
-  location.href = `b.html?id=${id}`;
+  location.href = `PokedexVista2.html?id=${id}`;
 }
