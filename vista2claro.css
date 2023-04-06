@@ -1,22 +1,31 @@
 
 body {
   background-image: url("Recursos/Imgenes/fondo.png");
-background-size: 1600px;
-background-position:top;
-background-repeat: no-repeat;   
+  background-size: 1600px;
+  background-position:top;
+  background-repeat: no-repeat;
+  font-family:fantasy;/**/
 }
 
-h1 {
-  color: rgb(0, 0, 0);
-  text-align: center;
-  font-size: 70px;
+@font-face {
+  font-family: Pokedex;
+  src: url('Recursos/FuenteTituloPokedex/Pokemon\ Solid.ttf');
 }
 
- .principio{
+.principio{
+  font-family: Pokedex !important;
+  letter-spacing: 4px;
   text-align: center;
   font-size: 62px;
-  margin: 62px auto 220px auto;
+  margin:0 auto 170px auto;
+  color: white;
+  -webkit-text-stroke: 2px rgb(0, 0, 0);
 }
+
+.principio > span{
+  margin: 0 60px 0 60px;
+}
+
 .subclass-principio{
   margin:0 auto 0 auto;
 }
@@ -60,7 +69,7 @@ h1 {
   font-size: x-large;
   width: 90%;
   height: 60%; 
- }
+}
   
 .descripcionYtipo{
   margin: 40px;
@@ -122,29 +131,42 @@ h1 {
 
 .tituloEvol{
   text-align: center;
-  font-size: 100px;
+  font-size: 50px;
   font-weight: bold;
   margin: 60px auto 0 auto;
 }
 
 .evoluciones{
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px,1fr));
-  margin-bottom: 100px;
-  margin: 30px 50px 100px 50px;
+  grid-template-columns: repeat(auto-fit, minmax(140px,1fr));
+  margin: 30px auto 100px auto;
   background-image: linear-gradient(to bottom right, rgb(102, 101, 101) ,rgb(196, 194, 194));
   padding: 50px 50px 50px 50px;
   border-radius: 40px;
+  width: 80%;
 }
 
-.pokemonEvolucion{/**/
+@media only screen and (max-width: 950px) {
+  .evoluciones{
+    grid-template-columns: auto;
+    width: 60%;
+    min-width: 300px;
+  }
+  .principio > span{/**/
+    margin: 0;
+    font-size: 50px;
+  }
+}
+
+.pokemonEvolucion{
   margin:auto;
+  max-width: 250px;
+  width: 80%;
 }
 
 .imgEvoluciones{
-  /*box-shadow: 0 0 30px 3px rgb(0, 0, 0);*/
-  transition: 0.5s;
-width: 80%;
+transition: 0.5s;
+width: 70%;
 padding: 30px;
 background-image: linear-gradient(to bottom right, rgb(102, 101, 101) ,rgb(196, 194, 194));
 border-radius: 600px;
@@ -153,29 +175,23 @@ border:solid 4px rgb(255, 255, 255);
 
 .imgEvoluciones:hover{
   box-shadow: 0 0 80px 20px rgb(255, 255, 255);
-  /*box-shadow: 0 0 30px 3px rgb(255, 255, 255);*/
 }
 
-.boton{
-  border-radius: 600px;
-  all:unset;
-  cursor: pointer;
-}
-
-.evolucion{
+p.evolucion{
   margin-top:30px;
   margin: auto;
   color:black;
   text-align: center;
-  font-size: xx-large;
+  font-size: x-large;
 }
 
-.mismoPokemon{
-  margin-top:30px;
+p.mismoPokemon{
+  margin-top:15px;
   margin: auto;
   color:rgb(0, 208, 255);
   text-align: center;
-  font-size: xx-large;
+  font-size: x-large;
+  width: 60%;
 }
 
 img.mismoPokemon{
@@ -184,12 +200,17 @@ img.mismoPokemon{
 
 .trigger{
   color: white;
-  margin:auto;
-  text-align: center;
-  vertical-align:auto;
-  margin: 50px auto 50px auto;
   font-size: x-large;
-  
+  width: 80%;
+  text-align: center;
+  margin: 30px auto 30px auto;
+}
+
+.boton{
+  border-radius: 600px;
+  all:unset;
+  cursor: pointer;
+  border-radius: 600px;
 }
 
 .tipos{

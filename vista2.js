@@ -14,29 +14,33 @@ fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
 }
 
 function mostrarPokemon(pokemon){ /*datos de un pokemon*/
-const tiposTraducidos = {
-    normal: 'Normal',
-    fire: 'Fuego',
-    water: 'Agua',
-    electric: 'El&eacute;ctrico',
-    grass: 'Planta',
-    ice: 'Hielo',
-    fighting: 'Lucha',
-    poison: 'Veneno',
-    ground: 'Tierra',
-    flying: 'Volador',
-    psychic: 'Ps&iacute;quico',
-    bug: 'Bicho',
-    rock: 'Roca',
-    ghost: 'Fantasma',
-    dragon: 'Drag&oacute;n',
-    dark: 'Siniestro',
-    steel: 'Acero',
-    fairy: 'Hada'
-  };
-  for(let i =0; i <6;i++){
 
-    move(pokemon.stats[i].stat.name, pokemon.stats[i].base_stat);
+const nombre = document.getElementsByClassName("principio")
+nombre[0].innerHTML = `<span>N&deg; ${(pokemon.id.toString().padStart(3,0))}</span><span>   ${pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</span>`;
+
+const tiposTraducidos = {
+  normal: 'Normal',
+  fire: 'Fuego',
+  water: 'Agua',
+  electric: 'El&eacute;ctrico',
+  grass: 'Planta',
+  ice: 'Hielo',
+  fighting: 'Lucha',
+  poison: 'Veneno',
+  ground: 'Tierra',
+  flying: 'Volador',
+  psychic: 'Ps&iacute;quico',
+  bug: 'Bicho',
+  rock: 'Roca',
+  ghost: 'Fantasma',
+  dragon: 'Drag&oacute;n',
+  dark: 'Siniestro',
+  steel: 'Acero',
+  fairy: 'Hada'
+};
+
+for(let i =0; i <6;i++){
+  move(pokemon.stats[i].stat.name, pokemon.stats[i].base_stat);
 }
 
 
@@ -52,19 +56,18 @@ div.innerHTML = `   <div class="imagen">
                 <div class="descripcionYtipo"> 
                     <div class="descripcion">
                         <div class="texto">
-                             Altura:<br> ${pokemon.height}
+                             Altura:<br> ${pokemon.height / 10} m
                         </div>
                          <div class="texto">
-                             Peso:<br> ${pokemon.weight}
+                             Peso:<br> ${pokemon.weight / 10} kg
                          </div>         
                     </div>
                 <div class="parrafo">
                    <p>TIPOS</p>
                     ${tipos}
                 </div>
-                </div>  
-              
-            `;/*poner los tres divs del html aqui una vez terminados, y se anade los datos como en la vista 1 ${pokemon.name}... */
+                </div>
+            `;
 
 infoPokemon.append(div);
 
@@ -77,8 +80,8 @@ function move(name,stat) {
 var elem = document.getElementById(`myBar-${name}`);   
 var width = 0;
 var id = setInterval(frame, 0);
-function frame() {
 
+function frame() {
     if (width >= (stat/255)*100) {
       clearInterval(id);
     } else {
@@ -87,6 +90,7 @@ function frame() {
      /* document.getElementById(`label-${name}`).innerHTML = width * 1  + '%';para poner texto dentro de la barra */
     }
   }
+
 }
 
 
@@ -147,7 +151,7 @@ function mostrarCadaPokemon(pokemon, trigger, id){
     let clase;
 
     if(pokemon.id == id){
-      clase = "mismoPokemon"; /*crear estas clases, y el grid*/
+      clase = "mismoPokemon";
     }
     else{
       clase = "evolucion";
