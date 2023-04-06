@@ -13,7 +13,7 @@ body {
 }
 
 .principio{
-  font-family: Pokedex !important;
+  font-family: Pokedex;
   letter-spacing: 4px;
   text-align: center;
   font-size: 62px;
@@ -31,19 +31,18 @@ body {
 }
 .general {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(530px,1fr));
-  margin-bottom: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(460px,1fr));
+  margin-bottom: 50px;
+  margin:auto;
 }
 .imagen{
   margin: auto;
   padding-bottom: 30px;
-  
+  width:100%;
 }
 .imagen-pokemon{
   margin: auto;
-  height: 500px;
-  width:500px;
-  
+  width:80%;
 }
 
 .descripcion{
@@ -72,7 +71,7 @@ body {
 }
   
 .descripcionYtipo{
-  margin: 40px;
+  margin: 30px 0 140px 0;
   height: 80%;
   width: 100%;
 }

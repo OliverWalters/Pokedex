@@ -25,6 +25,16 @@ body {
   font-size: 62px;
 }
 
+@media (max-width: 600px) {
+  #lista-pokemon {
+    margin-top: 150px;
+  }
+
+  .titulo {
+    margin-top:40px;
+  }
+}/**/
+
 .boton{
   margin-top: 70px;
   border: solid 0;
