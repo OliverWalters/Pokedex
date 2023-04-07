@@ -135,7 +135,7 @@ body {
   margin: 60px auto 0 auto;
 }
 
-.evoluciones{
+.evoluciones, .evolucionesEevee{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px,1fr));
   margin: 30px auto 100px auto;
@@ -154,6 +154,13 @@ body {
   .principio > span{/**/
     margin: 0;
     font-size: 50px;
+  }
+}
+@media only screen and (max-width: 1270px) {
+  .evolucionesEevee{
+    grid-template-columns: auto;
+    width: 60%;
+    min-width: 300px;
   }
 }
 
@@ -214,11 +221,14 @@ img.mismoPokemon{
 
 .tipos{
   padding: 5px 20px 8px 20px;
+  font-weight: bold;
   border: solid 0;
   border-radius: 10px;
   margin: 0 10px 0 10px;
   text-align: center;
   color: white;
+  border: 1px solid black;
+  -webkit-text-stroke: 0.6px rgb(0, 0, 0);
 }
 .normal{
   background-color:  rgb(221, 221, 221);

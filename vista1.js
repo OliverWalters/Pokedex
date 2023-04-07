@@ -54,7 +54,7 @@ function redireccion(id){
 document.addEventListener("keyup", e => {
   if(e.target.matches("#buscador")){
     document.querySelectorAll(".grid-item-pokemon").forEach(pokemon => {
-      if(pokemon.textContent.toLocaleLowerCase().includes(e.target.value)){
+      if(pokemon.textContent.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase())){
         pokemon.classList.remove("filtro")
       }
       else{

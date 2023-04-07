@@ -41,6 +41,7 @@ const tiposTraducidos = {
 
 for(let i =0; i <6;i++){
   move(pokemon.stats[i].stat.name, pokemon.stats[i].base_stat);
+  console.log(pokemon.stats[i].stat.name);
 }
 
 
@@ -50,7 +51,7 @@ tipos = tipos.join('');
 
 const div = document.createElement("div");
 div.classList.add("general");
-div.innerHTML = `   <div class="imagen">
+div.innerHTML = `<div class="imagen">
                     <img class="imagen-pokemon" src="${pokemon.sprites.other["official-artwork"].front_default}" alt="Imagen-pokemon">
                     </div>
                 <div class="descripcionYtipo"> 
@@ -77,6 +78,14 @@ datosEvoluciones(pokemon.species.url);
 }
 
 function move(name,stat) {
+  const traduccionStats ={
+    hp: "PS: ",
+    attack:"Ataque: ",
+    defense:"Defensa: ",
+    ["special-attack"]:"Ataque especial: ",
+    ["special-defense"]:"Defensa especial: ",
+    speed:"Velocidad: "
+  }
 var elem = document.getElementById(`myBar-${name}`);   
 var width = 0;
 var id = setInterval(frame, 0);
@@ -87,7 +96,7 @@ function frame() {
     } else {
       width++; 
       elem.style.width = width + '%'; 
-     /* document.getElementById(`label-${name}`).innerHTML = width * 1  + '%';para poner texto dentro de la barra */
+     document.getElementById(`label-${name}`).innerHTML = traduccionStats[name] + stat + "/255";/* para poner texto dentro de la barra */
     }
   }
 
@@ -109,33 +118,63 @@ function datosEvol(info){
 const evolucionesPokemons = document.getElementById("evoluciones");
 
 async function mostrarEvoluciones(datos){
+const itemsTraducidos = {
+  ["thunder-stone"]: "piedra trueno",
+  ["moon-stone"]: "piedra lunar",
+  ["leaf-stone"]: "piedra hoja",
+  ["water-stone"]: "piedra agua",
+  ["fire-stone"]: "piedra fuego"
+}
+
   let pokemon = datos.chain;
 
-  while(pokemon != null){
-    let trigger = "";
+  if(pokemon.evolves_to.length == 1){
+    while(pokemon != null){
+      let trigger = "";
+      let numeroPokemon = "";
 
-    
-    if(pokemon.evolves_to[0] != null){
-      if(pokemon.evolves_to[0].evolution_details[0].trigger.name == "level-up"){
-        if(pokemon.evolves_to[0].evolution_details[0].min_level == null){
-          trigger = `Evoluciona al nivel ${pokemon.evolves_to[0].evolution_details[0].min_happiness} de felicidad`;
-        }
-        else{
-          trigger = `Evoluciona al nivel ${pokemon.evolves_to[0].evolution_details[0].min_level}`;
-        }
+      if(pokemon.evolves_to[0] != null){
+        numeroPokemon = pokemon.evolves_to[0].species.url.split("/");
+      }
+        
       
+      if(pokemon.evolves_to[0] != null){
+        if(pokemon.evolves_to[0].evolution_details[0].trigger.name == "level-up"){
+          if(pokemon.evolves_to[0].evolution_details[0].min_level == null && pokemon.evolves_to[0].evolution_details[0].min_happiness != null){
+            trigger = `Evoluciona al nivel ${pokemon.evolves_to[0].evolution_details[0].min_happiness} de felicidad`;
+          }
+          else if(pokemon.evolves_to[0].evolution_details[0].min_happiness == null && pokemon.evolves_to[0].evolution_details[0].min_level != null){
+            trigger = `Evoluciona al nivel ${pokemon.evolves_to[0].evolution_details[0].min_level}`;
+          }
+        
+        }
+        else if(pokemon.evolves_to[0].evolution_details[0].trigger.name == "use-item"){
+          trigger =`Evoluciona con la ${itemsTraducidos[pokemon.evolves_to[0].evolution_details[0].item.name]}`;
+        }
+        else if (pokemon.evolves_to[0].evolution_details[0].trigger.name == "trade" && numeroPokemon[6] < 152){
+          trigger = "Intercambio";
+        }
       }
-      else if(pokemon.evolves_to[0].evolution_details[0].trigger.name == "use-item"){
-        trigger =`Evoluciona con el item ${pokemon.evolves_to[0].evolution_details[0].item.name}`;
-      }
+  
+      await cadaEvolucion(pokemon.species.name, trigger);
+      pokemon = pokemon.evolves_to[0];
+  
     }
-    
-
-    await cadaEvolucion(pokemon.species.name, trigger);
-    pokemon = pokemon.evolves_to[0];
-
   }
+  else{
+    let trigger = "";
+    await cadaEvolucion(datos.chain.species.name, trigger);
 
+    for(let i = 0; i < pokemon.evolves_to.length; i++){
+
+      let pokemonVariable = pokemon;
+      pokemonVariable = datos.chain.evolves_to[i];
+      trigger =`Eevee evoluciona con la ${itemsTraducidos[pokemonVariable.evolution_details[0].item.name]} a:`;
+      
+      await cadaEvolucion(pokemonVariable.species.name, trigger);
+    }
+  }
+  
 
 }
 
@@ -168,14 +207,26 @@ function mostrarCadaPokemon(pokemon, trigger, id){
                     <br><br><br>
                     <p class="${clase}">${pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</p>
                     `;
-    div2.innerHTML = `<p class="trigger">${trigger}</p>`
-    
-    evolucionesPokemons.append(div);
-    
-    if(trigger != ""){
-      evolucionesPokemons.append(div2)
+    div2.innerHTML = `<p class="trigger">${trigger}</p>`;
+
+    if(id == 133 || id == 134 || id == 135 || id == 136){
+      evolucionesPokemons.classList.remove("evoluciones");
+      evolucionesPokemons.classList.add("evolucionesEevee");
+      if(trigger != ""){
+        evolucionesPokemons.append(div2)
+      }
+      evolucionesPokemons.append(div);
     }
-   }
+    else{
+      evolucionesPokemons.classList.remove("evolucionesEevee");
+      evolucionesPokemons.classList.add("evoluciones");
+      evolucionesPokemons.append(div);
+      if(trigger != ""){
+        evolucionesPokemons.append(div2)
+      }
+    }
+    
+  }
 }
 
 function redireccion(id){
