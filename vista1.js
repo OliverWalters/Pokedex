@@ -64,8 +64,14 @@ document.addEventListener("keyup", e => {
     })
   }
 })
-function pasarmodooscuro(){
-
+function cambiarModo(){
+const modo = document.getElementById("css");
+if(modo.innerHTML == "<link rel=\"stylesheet\" href=\"vista1claro.css\">"){
+  modo.innerHTML = "<link rel=\"stylesheet\" href=\"vista1oscuro.css\">"
+}
+else{
+  modo.innerHTML = "<link rel=\"stylesheet\" href=\"vista1claro.css\">"
+}
 }
 
 

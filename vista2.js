@@ -232,3 +232,27 @@ function mostrarCadaPokemon(pokemon, trigger, id){
 function redireccion(id){
   location.href = `PokedexVista2.html?id=${id}`;
 }
+
+
+const modo = document.getElementById("css");
+  if(modo.innerHTML == "<link rel=\"stylesheet\" href=\"vista2claro.css\">"){
+    modo.innerHTML = "<link rel=\"stylesheet\" href=\"vista2oscuro.css\">"
+  }
+  else{
+    modo.innerHTML = "<link rel=\"stylesheet\" href=\"vista2claro.css\">"
+  }
+
+
+
+
+function cambiarModo(){
+  
+  if(modo.innerHTML == "<link rel=\"stylesheet\" href=\"vista2claro.css\">"){
+    modo.innerHTML = "<link rel=\"stylesheet\" href=\"vista2oscuro.css\">"
+  }
+  else{
+    modo.innerHTML = "<link rel=\"stylesheet\" href=\"vista2claro.css\">"
+  }
+  }
+  
+  
