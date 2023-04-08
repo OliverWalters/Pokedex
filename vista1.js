@@ -64,13 +64,21 @@ document.addEventListener("keyup", e => {
     })
   }
 })
-function cambiarModo(){
+
+
 const modo = document.getElementById("css");
-if(modo.innerHTML == "<link rel=\"stylesheet\" href=\"vista1claro.css\">"){
+if(localStorage.getItem("modoOscuro") == "true"){
   modo.innerHTML = "<link rel=\"stylesheet\" href=\"vista1oscuro.css\">"
 }
+
+function cambiarModo(){
+if(modo.innerHTML == "<link rel=\"stylesheet\" href=\"vista1oscuro.css\">"){
+  modo.innerHTML = "<link rel=\"stylesheet\" href=\"vista1claro.css\">";
+  localStorage.setItem("modoOscuro", "false");
+}
 else{
-  modo.innerHTML = "<link rel=\"stylesheet\" href=\"vista1claro.css\">"
+  modo.innerHTML = "<link rel=\"stylesheet\" href=\"vista1oscuro.css\">";
+  localStorage.setItem("modoOscuro", "true");
 }
 }
 

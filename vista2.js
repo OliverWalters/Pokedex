@@ -41,7 +41,6 @@ const tiposTraducidos = {
 
 for(let i =0; i <6;i++){
   move(pokemon.stats[i].stat.name, pokemon.stats[i].base_stat);
-  console.log(pokemon.stats[i].stat.name);
 }
 
 
@@ -235,23 +234,19 @@ function redireccion(id){
 
 
 const modo = document.getElementById("css");
-  if(modo.innerHTML == "<link rel=\"stylesheet\" href=\"vista2claro.css\">"){
-    modo.innerHTML = "<link rel=\"stylesheet\" href=\"vista2oscuro.css\">"
-  }
-  else{
-    modo.innerHTML = "<link rel=\"stylesheet\" href=\"vista2claro.css\">"
-  }
 
-
+if(localStorage.getItem("modoOscuro") == "true"){
+  modo.innerHTML = "<link rel=\"stylesheet\" href=\"vista2oscuro.css\">"
+}
 
 
 function cambiarModo(){
   
-  if(modo.innerHTML == "<link rel=\"stylesheet\" href=\"vista2claro.css\">"){
-    modo.innerHTML = "<link rel=\"stylesheet\" href=\"vista2oscuro.css\">"
+  if(modo.innerHTML == "<link rel=\"stylesheet\" href=\"vista2oscuro.css\">"){
+    modo.innerHTML = "<link rel=\"stylesheet\" href=\"vista2claro.css\">"
   }
   else{
-    modo.innerHTML = "<link rel=\"stylesheet\" href=\"vista2claro.css\">"
+    modo.innerHTML = "<link rel=\"stylesheet\" href=\"vista2oscuro.css\">"
   }
   }
   

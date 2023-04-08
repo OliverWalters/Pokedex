@@ -1,6 +1,7 @@
 
 body {
-    background-image: url("Recursos/Imgenes/fondo.png");
+    background-image: url("Recursos/Imgenes/fondoOscuro.png");
+    background-color: #122d67;
     background-size: 1600px;
     background-position:top;
     background-repeat: no-repeat;
@@ -35,11 +36,14 @@ body {
     position: absolute;
     right: 10px ;
     top: 210px;
-  }
-  .modooscuro:hover{
-    background-color: rgb(40, 34, 34) ;
+    background-color:#122d67;
     color: white;
   }
+  .modooscuro:hover{
+    background-color:#ffffff;
+    color: rgb(0, 0, 0);
+  }
+
   .general {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(460px,1fr));
@@ -68,12 +72,13 @@ body {
   }
   
   .texto{
+    color:white;
     border-radius: 35px 0px 35px 0px;
     -moz-border-radius: 35px 0px 35px 0px;
     -webkit-border-radius: 35px 0px 35px 0px;
     padding: 20px 0 0 30px;
     margin-bottom: 15px;
-    border: 2px solid #5878ca;
+    border: 2px solid #ffffff;
     background-image: linear-gradient(to right,rgb(46, 122, 236),rgb(87, 178, 231),rgb(177, 224, 236));
     text-align: center;
     font-size: x-large;
@@ -91,8 +96,9 @@ body {
     font-size: x-large;
     margin-left: 5%;
     margin-bottom: 30px;
-  
+    color:white;
   }
+
   .tipodepokemon{
     font-size: x-large;
     margin: 0px 0 20px 10%;
@@ -103,7 +109,7 @@ body {
     width: 90%;
     padding-top: 20px;
     padding-bottom: 20px;
-    background-image: linear-gradient(to bottom right,rgb(201, 201, 201),rgb(151, 155, 156), rgb(60, 60, 65) );
+    background-image: linear-gradient(to bottom right,rgb(143, 141, 141),rgb(90, 95, 96), rgb(60, 60, 65) );
     margin: auto;
   }
   .myProgress {
@@ -114,7 +120,7 @@ body {
     border-radius: 20px;
     margin-bottom: 10px;
     border-color: black;
-    background-color: white;
+    background-color: rgb(224, 224, 224);
     margin: 20px auto 20px auto;
   }
   
@@ -142,8 +148,8 @@ body {
   .tituloEvol{
     text-align: center;
     font-size: 50px;
-    font-weight: bold;
     margin: 60px auto 0 auto;
+    color: white;
   }
   
   .evoluciones, .evolucionesEevee{

@@ -3,7 +3,8 @@
   }
   
   body {
-    background-image: url("Recursos/Imgenes/fondo.png");
+    background-image: url("Recursos/Imgenes/fondoOscuro.png");
+    background-color: #122d67;
     background-size: 1600px;
     background-position:top;
     background-repeat: no-repeat;
@@ -17,7 +18,7 @@
   .titulo {
     font-family: Pokedex;
     color: rgba(255, 255, 0, 0.963);
-    -webkit-text-stroke: 2px blue;
+    -webkit-text-stroke: 2px rgb(0, 0, 156);
     margin:0;
     padding: 0;
     letter-spacing: 7px;
@@ -54,14 +55,15 @@
   }
   
   .pokemon {
-    background-color: rgba(255, 255, 255, 0.914);
+    background-color: rgba(44, 34, 150, 0.914);
+    color:white;
     margin: auto;
     padding: 20px;
     text-align: center;
     border: solid 0;
     border-radius: 50px;
     max-width: 300px;
-    box-shadow: 0 0 30px 3px;
+    box-shadow: 0 0 30px 3px white;
     transition: 0.5s;
     height: 400px;
   }
@@ -118,10 +120,13 @@
     position: absolute;
     right: 10px ;
     top: 160px;
-  }
-  .modooscuro:hover{
-    background-color: rgb(136, 125, 125) ;
+    background-color:#122d67;
     color: white;
+  }
+  
+  .modooscuro:hover{
+    background-color:#ffffff;
+    color: rgb(0, 0, 0);
   }
   
   .submit-buscador{
@@ -136,7 +141,8 @@
   .numero-pokemons{
    border: solid 0;
    border-radius: 7px;
-   background-color: rgb(221, 221, 221);
+   background-color: rgb(120, 119, 124);
+   color:white;
    padding: 3px;
   }
   
