@@ -244,9 +244,11 @@ function cambiarModo(){
   
   if(modo.innerHTML == "<link rel=\"stylesheet\" href=\"vista2oscuro.css\">"){
     modo.innerHTML = "<link rel=\"stylesheet\" href=\"vista2claro.css\">"
+    localStorage.setItem("modoOscuro", "false");
   }
   else{
     modo.innerHTML = "<link rel=\"stylesheet\" href=\"vista2oscuro.css\">"
+    localStorage.setItem("modoOscuro", "true");
   }
   }
   

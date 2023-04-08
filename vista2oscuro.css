@@ -38,6 +38,7 @@ body {
     top: 210px;
     background-color:#122d67;
     color: white;
+    font-family:fantasy;
   }
   .modooscuro:hover{
     background-color:#ffffff;

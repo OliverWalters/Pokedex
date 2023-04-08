@@ -35,6 +35,7 @@ body {
   position: absolute;
   right: 10px ;
   top: 210px;
+  font-family:fantasy;
 }
 .modooscuro:hover{
   background-color: rgb(40, 34, 34) ;
