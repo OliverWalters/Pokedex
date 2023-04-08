@@ -1,0 +1,292 @@
+
+body {
+    background-image: url("Recursos/Imgenes/fondo.png");
+    background-size: 1600px;
+    background-position:top;
+    background-repeat: no-repeat;
+    font-family:fantasy;/**/
+  }
+  
+  @font-face {
+    font-family: Pokedex;
+    src: url('Recursos/FuenteTituloPokedex/Pokemon\ Solid.ttf');
+  }
+  
+  .principio{
+    font-family: Pokedex;
+    letter-spacing: 4px;
+    text-align: center;
+    font-size: 62px;
+    margin:0 auto 170px auto;
+    color: white;
+    -webkit-text-stroke: 2px rgb(0, 0, 0);
+  }
+  
+  .principio > span{
+    margin: 0 60px 0 60px;
+  }
+  
+  
+  .modooscuro{
+    padding:3px;
+    padding-left: 8px;
+    width: 150px;
+    border-radius: 10px;
+    position: absolute;
+    right: 10px ;
+    top: 210px;
+  }
+  .modooscuro:hover{
+    background-color: rgb(40, 34, 34) ;
+    color: white;
+  }
+  .general {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(460px,1fr));
+    margin-bottom: 50px;
+    margin:auto;
+  }
+  .imagen{
+    margin: auto;
+    padding-bottom: 30px;
+    width:100%;
+  }
+  .imagen-pokemon{
+    margin: auto;
+    width:80%;
+  }
+  
+  .descripcion{
+    display: grid;
+    grid-template-columns: auto;
+    border: solid 0;
+    border-radius: 20px;
+    padding: 20px 0 0 30px;
+    height: 80%;
+    width: 80%;
+    margin-bottom: 15px; 
+  }
+  
+  .texto{
+    border-radius: 35px 0px 35px 0px;
+    -moz-border-radius: 35px 0px 35px 0px;
+    -webkit-border-radius: 35px 0px 35px 0px;
+    padding: 20px 0 0 30px;
+    margin-bottom: 15px;
+    border: 2px solid #5878ca;
+    background-image: linear-gradient(to right,rgb(46, 122, 236),rgb(87, 178, 231),rgb(177, 224, 236));
+    text-align: center;
+    font-size: x-large;
+    width: 90%;
+    height: 60%; 
+  }
+    
+  .descripcionYtipo{
+    margin: 30px 0 140px 0;
+    height: 80%;
+    width: 100%;
+  }
+  
+  .parrafo{
+    font-size: x-large;
+    margin-left: 5%;
+    margin-bottom: 30px;
+  
+  }
+  .tipodepokemon{
+    font-size: x-large;
+    margin: 0px 0 20px 10%;
+  }
+  .total-barras{
+    border: solid 0;
+    border-radius: 30px;
+    width: 90%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-image: linear-gradient(to bottom right,rgb(201, 201, 201),rgb(151, 155, 156), rgb(60, 60, 65) );
+    margin: auto;
+  }
+  .myProgress {
+      
+    width: 85%;
+    height: 30px; 
+    border: solid 0;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    border-color: black;
+    background-color: white;
+    margin: 20px auto 20px auto;
+  }
+  
+  #myBar-hp,#myBar-attack,#myBar-defense,#myBar-special-attack,#myBar-special-defense,#myBar-speed{
+   
+    width: 0%;
+    height: 100%;
+    border: solid 0;
+    border-radius: 20px;
+    padding-left: 10px;
+    
+    background-color: yellow;
+    transition: 3s;
+  }
+  
+  #label-hp,#label-attack,#label-defense,#label-special-attack,#label-special-defense,#label-speed {
+    padding-left: 10px;
+    position: absolute;
+    line-height: 30px;
+    color: rgb(0, 0, 0);
+    font-size: large;
+    
+  }
+  
+  .tituloEvol{
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    margin: 60px auto 0 auto;
+  }
+  
+  .evoluciones, .evolucionesEevee{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px,1fr));
+    margin: 30px auto 100px auto;
+    background-image: linear-gradient(to bottom right, rgb(102, 101, 101) ,rgb(196, 194, 194));
+    padding: 50px 50px 50px 50px;
+    border-radius: 40px;
+    width: 80%;
+  }
+  
+  @media only screen and (max-width: 950px) {
+    .evoluciones{
+      grid-template-columns: auto;
+      width: 60%;
+      min-width: 300px;
+    }
+    .principio > span{/**/
+      margin: 0;
+      font-size: 50px;
+    }
+  }
+  @media only screen and (max-width: 1270px) {
+    .evolucionesEevee{
+      grid-template-columns: auto;
+      width: 60%;
+      min-width: 300px;
+    }
+  }
+  
+  .pokemonEvolucion{
+    margin:auto;
+    max-width: 250px;
+    width: 80%;
+  }
+  
+  .imgEvoluciones{
+  transition: 0.5s;
+  width: 70%;
+  padding: 30px;
+  background-image: linear-gradient(to bottom right, rgb(102, 101, 101) ,rgb(196, 194, 194));
+  border-radius: 600px;
+  border:solid 4px rgb(255, 255, 255);
+  }
+  
+  .imgEvoluciones:hover{
+    box-shadow: 0 0 80px 20px rgb(255, 255, 255);
+  }
+  
+  p.evolucion{
+    margin-top:30px;
+    margin: auto;
+    color:black;
+    text-align: center;
+    font-size: x-large;
+  }
+  
+  p.mismoPokemon{
+    margin-top:15px;
+    margin: auto;
+    color:rgb(0, 208, 255);
+    text-align: center;
+    font-size: x-large;
+    width: 60%;
+  }
+  
+  img.mismoPokemon{
+    background-image: linear-gradient(to bottom right, rgb(171, 255, 241) ,rgb(52, 109, 233));
+  }
+  
+  .trigger{
+    color: white;
+    font-size: x-large;
+    width: 80%;
+    text-align: center;
+    margin: 30px auto 30px auto;
+  }
+  
+  .boton{
+    border-radius: 600px;
+    all:unset;
+    cursor: pointer;
+    border-radius: 600px;
+  }
+  
+  .tipos{
+    padding: 5px 20px 8px 20px;
+    font-weight: bold;
+    border: solid 0;
+    border-radius: 10px;
+    margin: 0 10px 0 10px;
+    text-align: center;
+    color: white;
+    border: 1px solid black;
+    -webkit-text-stroke: 0.6px rgb(0, 0, 0);
+  }
+  .normal{
+    background-color:  rgb(221, 221, 221);
+  }
+  .grass{
+  background-color: rgb(45, 172, 45);;
+  }
+  .fire{
+  background-color: red ;
+  }
+  .flying{
+  background-color: rgb(35, 163, 227);
+  }
+  .water{
+  background-color: blue;
+  }
+  .bug{
+  background-color: rgb(67, 204, 67);
+  }
+  .poison{
+  background-color: rgb(180, 7, 248);
+  }
+  .electric{
+  background-color: yellow;
+  }
+  .ground{
+  background-color: brown;
+  }
+  .fairy{
+  background-color: rgb(255, 0, 221);
+  }
+  .fighting{
+  background-color: orange;
+  }
+  .psychic{
+  background-color: rgb(208, 0, 118);
+  }
+  .rock{
+  background-color: rgb(136, 132, 100);
+  }
+  .ice{
+  background-color: aqua;
+  }
+  .ghost{
+  background-color: rgb(68, 8, 124);
+  }
+  .dragon{
+  background-color: rgb(3, 3, 138);
+  }
+  
