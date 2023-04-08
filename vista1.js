@@ -46,6 +46,7 @@ div.innerHTML = `<button type="button" class="boton" onclick= redireccion(${poke
                 ${tipos}
                 </div> 
                 </button>`;
+                   
 listaPokemon.append(div);
 }
 function redireccion(id){
@@ -63,6 +64,9 @@ document.addEventListener("keyup", e => {
     })
   }
 })
+function pasarmodooscuro(){
+
+}
 
 
 
