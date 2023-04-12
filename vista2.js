@@ -127,7 +127,7 @@ const itemsTraducidos = {
 
   let pokemon = datos.chain;
 
-  if(pokemon.evolves_to.length == 1){
+  if(pokemon.evolves_to.length == 1 || pokemon.evolves_to.length == 2){
     while(pokemon != null){
       let trigger = "";
       let numeroPokemon = "";
@@ -138,7 +138,7 @@ const itemsTraducidos = {
         
       
       if(pokemon.evolves_to[0] != null){
-        if(pokemon.evolves_to[0].evolution_details[0].trigger.name == "level-up"){
+        if(pokemon.evolves_to[0].evolution_details[0].trigger.name == "level-up" && numeroPokemon[6] < 152){
           if(pokemon.evolves_to[0].evolution_details[0].min_level == null && pokemon.evolves_to[0].evolution_details[0].min_happiness != null){
             trigger = `Evoluciona al nivel ${pokemon.evolves_to[0].evolution_details[0].min_happiness} de felicidad`;
           }
@@ -147,7 +147,7 @@ const itemsTraducidos = {
           }
         
         }
-        else if(pokemon.evolves_to[0].evolution_details[0].trigger.name == "use-item"){
+        else if(pokemon.evolves_to[0].evolution_details[0].trigger.name == "use-item" && numeroPokemon[6] < 152){
           trigger =`Evoluciona con la ${itemsTraducidos[pokemon.evolves_to[0].evolution_details[0].item.name]}`;
         }
         else if (pokemon.evolves_to[0].evolution_details[0].trigger.name == "trade" && numeroPokemon[6] < 152){
@@ -165,7 +165,7 @@ const itemsTraducidos = {
     await cadaEvolucion(datos.chain.species.name, trigger);
 
     for(let i = 0; i < pokemon.evolves_to.length; i++){
-
+console.log(datos.chain.evolves_to[i])
       let pokemonVariable = pokemon;
       pokemonVariable = datos.chain.evolves_to[i];
       trigger =`Eevee evoluciona con la ${itemsTraducidos[pokemonVariable.evolution_details[0].item.name]} a:`;
