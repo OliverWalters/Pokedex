@@ -126,16 +126,16 @@ const itemsTraducidos = {
 }
 
   let pokemon = datos.chain;
-  let numeroPokemon = "";
   
-  if(pokemon.evolves_to[0] != null){
-    numeroPokemon = pokemon.evolves_to[0].species.url.split("/");
-  }
     
   if(pokemon.evolves_to.length == 1 || pokemon.evolves_to.length == 2){
     while(pokemon != null){
       let trigger = "";
-      
+      let numeroPokemon = "";
+
+      if(pokemon.evolves_to[0] != null){
+        numeroPokemon = pokemon.evolves_to[0].species.url.split("/");
+      }
       
       if(pokemon.evolves_to[0] != null && numeroPokemon[6] < 152){
         if(pokemon.evolves_to[0].evolution_details[0].trigger.name == "level-up"){
@@ -162,6 +162,11 @@ const itemsTraducidos = {
   }
   else if(pokemon.evolves_to.length == 3){
     let trigger = "";
+    let numeroPokemon = "";
+
+    if(pokemon.evolves_to[0] != null){
+      numeroPokemon = pokemon.evolves_to[0].species.url.split("/");
+    }
     
     if(numeroPokemon[6] == id){
       pokemon = pokemon.evolves_to[0]
