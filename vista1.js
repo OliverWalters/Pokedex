@@ -52,18 +52,19 @@ listaPokemon.append(div);
 function redireccion(id){
   location.href = `PokedexVista2.html?id=${id}`;
 }
-document.addEventListener("keyup", e => {
-  if(e.target.matches("#buscador")){
-    document.querySelectorAll(".grid-item-pokemon").forEach(pokemon => {
-      if(pokemon.textContent.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase())){
-        pokemon.classList.remove("filtro")
-      }
-      else{
-        pokemon.classList.add("filtro")
-      }
-    })
+
+
+function buscar(){
+const letras = document.getElementById("buscador").value;
+document.querySelectorAll(".grid-item-pokemon").forEach(pokemon => {
+  if(pokemon.textContent.toLocaleLowerCase().includes(letras.toLocaleLowerCase())){
+    pokemon.classList.remove("filtro")
+  }
+  else{
+    pokemon.classList.add("filtro")
   }
 })
+}
 
 
 const modo = document.getElementById("css");
