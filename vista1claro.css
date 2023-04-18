@@ -25,9 +25,9 @@ body {
   font-size: 62px;
 }
 
-@media handheld and (max-width: 600px) {
+@media (max-width: 600px) {
   #lista-pokemon {
-    margin-top: 150px;
+    margin-top: 120px;
   }
 
   .titulo {
@@ -50,7 +50,7 @@ body {
   padding: 10px;
   width: 85%;
   margin:auto;
-  margin-top: 100px;
+  margin-top: 60px;
 }
 
 .pokemon {
@@ -71,7 +71,7 @@ body {
 }
 
 .pokemon:hover{
-  box-shadow: 0 0 80px 20px orange;
+  box-shadow: 0 0 80px 20px rgb(255, 94, 0);
   height: 420px;
 }
 
@@ -93,13 +93,12 @@ body {
   max-width: 30%;
   min-width: 220px;
   display: grid;
-  grid-template-columns: repeat(auto-fill,minmax(111px,1fr));
+  grid-template-columns: repeat(auto-fill,minmax(120px,1fr));
 }
 
 .texto-buscador{
   font-size: 24px;
   color: white;
-  /*font-weight: bold;*/
 }
 
 .input-buscador{
@@ -131,6 +130,30 @@ body {
 .imagen-submit{
   width: 35px;
 }
+button{
+  cursor: pointer;
+}
+.botonInicio{
+  position:sticky;
+  top:90%;
+  left:95%;
+  border: solid 2px white;
+  border-radius: 70%;
+  font-size: large;
+  font-weight: bold;
+  color: white;
+  box-shadow: 0 0 20px 5px rgb(84, 84, 84);
+  width: 50px;
+  height: 50px;
+  background-color: rgb(166, 2, 2);
+  transition: 0.5s;
+}
+.botonInicio:hover{
+  box-shadow: 0 0 23px 8px rgb(59, 59, 59);
+}
+.imgUp{
+  width: 20px;
+}
 
 .numero-pokemons{
  border: solid 0;
@@ -145,18 +168,17 @@ body {
 
 .tipos{
   padding: 5px 20px 8px 20px;
-  font-weight: bold;
   border: solid 0;
   border-radius: 10px;
   margin: 0 10px 0 10px;
   text-align: center;
   color: white;
   border: 1px solid black;
-  -webkit-text-stroke: 0.6px rgb(0, 0, 0);
 }
 
 .normal{
   background-color:  rgb(221, 221, 221);
+  color: black;
 }
 
 .grass{
@@ -185,6 +207,7 @@ background-color: rgb(180, 7, 248);
 
 .electric{
 background-color: yellow;
+color: black;
 }
 
 .ground{
@@ -209,6 +232,7 @@ background-color: rgb(136, 132, 100);
 
 .ice{
 background-color: aqua;
+color: black;
 }
 
 .ghost{
@@ -219,5 +243,7 @@ background-color: rgb(68, 8, 124);
 background-color: rgb(3, 3, 138);
 }
 
-
+.steel{
+  background-color: rgb(84, 84, 84);
+}
 

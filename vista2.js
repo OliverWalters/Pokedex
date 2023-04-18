@@ -13,7 +13,7 @@ fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
 .then(resultado => mostrarPokemon(resultado))
 }
 
-function mostrarPokemon(pokemon){ /*datos de un pokemon*/
+function mostrarPokemon(pokemon){
 
 const nombre = document.getElementsByClassName("principio")
 nombre[0].innerHTML = `<span>N&deg; ${(pokemon.id.toString().padStart(3,0))}</span><span>   ${pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</span>`;
@@ -38,6 +38,10 @@ const tiposTraducidos = {
   steel: 'Acero',
   fairy: 'Hada'
 };
+
+  let buton = document.getElementById("paginaPrincipal");
+  buton.classList.add(`${pokemon.types[0].type.name}`);
+
 
 for(let i =0; i <6;i++){
   move(pokemon.stats[i].stat.name, pokemon.stats[i].base_stat);
@@ -66,15 +70,13 @@ div.innerHTML = `<div class="imagen">
                    <p>TIPOS</p>
                     ${tipos}
                 </div>
-                </div>
-            `;
+                </div>`;
 
 infoPokemon.append(div);
 
-
 datosEvoluciones(pokemon.species.url);
-
 }
+
 
 function move(name,stat) {
   const traduccionStats ={
@@ -248,24 +250,34 @@ function redireccion(id){
   location.href = `PokedexVista2.html?id=${id}`;
 }
 
+function paginaPrincipal(){
+  location.href = `index.html?id=${id}`;
+}
+
+function irInicio(){
+  window.scrollTo({
+    top:0,
+    behavior: "smooth"
+  })
+}
+
+
 
 const modo = document.getElementById("css");
 
 if(localStorage.getItem("modoOscuro") == "true"){
-  modo.innerHTML = "<link rel=\"stylesheet\" href=\"vista2oscuro.css\">"
+  modo.href = "vista2oscuro.css"
 }
 
-
 function cambiarModo(){
-  
-  if(modo.innerHTML == "<link rel=\"stylesheet\" href=\"vista2oscuro.css\">"){
-    modo.innerHTML = "<link rel=\"stylesheet\" href=\"vista2claro.css\">"
-    localStorage.setItem("modoOscuro", "false");
-  }
-  else{
-    modo.innerHTML = "<link rel=\"stylesheet\" href=\"vista2oscuro.css\">"
-    localStorage.setItem("modoOscuro", "true");
-  }
-  }
+if(localStorage.getItem("modoOscuro") == "true"){
+  modo.href = "vista2claro.css"
+  localStorage.setItem("modoOscuro", "false");
+}
+else{
+  modo.href = "vista2oscuro.css"
+  localStorage.setItem("modoOscuro", "true");
+}
+}
   
   

@@ -3,39 +3,24 @@
     <head>
         <link rel="icon" type="image/x-icon" href="Recursos/Imgenes/pokeball.png">
         <title>Lista de los Pokemons</title>
-        <div id="css">
-            <link rel="stylesheet" href="vista1claro.css">
-        </div>
+        <link id="css" rel="stylesheet" href="vista1claro.css">
         
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        
         <div class="titulo">PoK&eacute;DeX</div>
         <div class="buscador">
             <span>  
                 <label class="texto-buscador">Buscador:</label><br>
                 <input id="buscador" onkeyup="buscar()" type="search" class="input-buscador" name="busquedadepok&eacute;mon" placeholder="Introduzca Pok&eacute;mon">
             </span>  
-                <button class="submit-buscador"><img class="imagen-submit" src="Recursos/boton/antes.png"></button>
-
+                <button class="submit-buscador" onmouseover="mientras()" onmouseleave="inicio()" onclick="salta()"><img id="pika" class="imagen-submit" src="Recursos/boton/antes.png"></button>
         </div>
-        <p></p>
-        <p></p>
-        <p></p>
 
         <button class="modooscuro" type="button" onclick="cambiarModo()">Cambiar Tema</button>
-          
-        <div class ="lista-pokemon" id="lista-pokemon">
-              <!--<button type="button" class="boton" onclick= redireccion()>
-            <div class="pokemon">
-            <img src="Recursos/placeHolder.jpg" class="imagen-pokemons" alt="ImagenPokemons">
-            <p> Numero de pok&eacute;mon</p>
-            <p> Nombre del pok&eacute;mon</p>
-            <p> Tipo del pok&eacute;mon</p>     
-            </div> 
-             </button>-->
-        </div>
+        
+        <button id="inicio" class="botonInicio" type="button" onclick="irInicio()"><img class="imgUp"src="Recursos/Imgenes/up.png"></button>
+        <div class ="lista-pokemon" id="lista-pokemon"></div>
         
 
         <script src="vista1.js"></script>

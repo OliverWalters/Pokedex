@@ -1,3 +1,11 @@
+const enlace = window.location.search;
+
+const urlParametros = new URLSearchParams(enlace);
+const id = urlParametros.get('id');
+/**/ 
+
+
+
 const listaPokemon = document.getElementById("lista-pokemon");
 
 datosPokemons();
@@ -10,7 +18,7 @@ async function datosPokemons() {
     }
 }
 
-function mostrarPokemon(pokemon){ /*datos de un pokemon*/
+function mostrarPokemon(pokemon){
 const tiposTraducidos = {
     normal: 'Normal',
     fire: 'Fuego',
@@ -39,6 +47,7 @@ tipos = tipos.join('');
 
 const div = document.createElement("div");
 div.classList.add("grid-item-pokemon");
+div.id = `${pokemon.id}`;
 div.innerHTML = `<button type="button" class="boton" onclick= redireccion(${pokemon.id})>
                 <div class="pokemon">
                 <img src="${pokemon.sprites.other["official-artwork"].front_default}" class="imagen-pokemons" alt="ImagenPokemons">
@@ -66,19 +75,43 @@ document.querySelectorAll(".grid-item-pokemon").forEach(pokemon => {
 })
 }
 
+function inicio(){
+  const img = document.getElementById("pika");
+  img.src = "Recursos/boton/antes.png";
+  img.style.width = "35px";
+}
+
+function mientras(){
+  const img = document.getElementById("pika");
+  img.src = "Recursos/boton/while.png";
+  img.style.width = "50px";
+}
+
+function salta(){
+  const img = document.getElementById("pika");
+  img.src = "Recursos/boton/desp.png";
+  img.style.width = "80px";
+}
+
+function irInicio(){
+  window.scrollTo({
+    top:0,
+    behavior: "smooth"
+  })
+}
 
 const modo = document.getElementById("css");
 if(localStorage.getItem("modoOscuro") == "true"){
-  modo.innerHTML = "<link rel=\"stylesheet\" href=\"vista1oscuro.css\">"
+  modo.href = "vista1oscuro.css"
 }
 
 function cambiarModo(){
-if(modo.innerHTML == "<link rel=\"stylesheet\" href=\"vista1oscuro.css\">"){
-  modo.innerHTML = "<link rel=\"stylesheet\" href=\"vista1claro.css\">";
+if(localStorage.getItem("modoOscuro") == "true"){
+  modo.href = "vista1claro.css"
   localStorage.setItem("modoOscuro", "false");
 }
 else{
-  modo.innerHTML = "<link rel=\"stylesheet\" href=\"vista1oscuro.css\">";
+  modo.href = "vista1oscuro.css"
   localStorage.setItem("modoOscuro", "true");
 }
 }

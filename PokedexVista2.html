@@ -3,22 +3,20 @@
 
 
 <head>
-    <div id="css">
-        <link rel="stylesheet" href="vista2claro.css">
-    </div>
     <title>Informaci&oacute;n Detallada</title>
     <link rel="icon" type="image/x-icon" href="Recursos/Imgenes/pokeball.png">
+    <link id="css" rel="stylesheet" href="vista2claro.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-
-    <div class="principio">
+    <button id="paginaPrincipal" class="paginaPrincipal" type="button" onclick="paginaPrincipal()">Volver</button>
+    <div id="principio" class="principio">
          <!--<span>Nombre Pokem&oacute;n</span>
         <span>N&uacute;mero Pokedex</span>-->
     </div>
     <button class="modooscuro" type="button" onclick="cambiarModo()">Cambiar Tema</button>
-
-<div id="general">
+    <button id="inicio" class="botonInicio" type="button" onclick="irInicio()"><img class="imgUp"src="Recursos/Imgenes/up.png"></button>
+    <div id="general">
     <!--<div class="imagen">
         <img class="imagen-pokemon" src="Recursos/placeHolder.jpg" alt="Imagen-pokemon">
     </div>
@@ -82,6 +80,7 @@
 <div class="tituloEvol">Cadena evolutiva</div>
 <div id="evoluciones" class="evoluciones">
 </div>
+
 <script src="vista2.js"></script>
 </body>
 </html>

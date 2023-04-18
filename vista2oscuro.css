@@ -18,9 +18,51 @@ body {
     letter-spacing: 4px;
     text-align: center;
     font-size: 62px;
-    margin:0 auto 170px auto;
+    margin:0 auto 90px auto;
     color: white;
     -webkit-text-stroke: 2px rgb(0, 0, 0);
+  }
+  
+  .paginaPrincipal{/**/
+    position:absolute;
+    top:20%;
+    left:3%;
+    border: solid 2px white;
+    border-radius: 70%;
+    font-size: large;
+    font-weight: bold;
+    color: white;
+    box-shadow: 0 0 50px 10px rgb(255, 255, 255);
+    width: 70px;
+    height: 70px;
+    transition: 0.5s;
+  }
+  .paginaPrincipal:hover{/**/
+    box-shadow: 0 0 50px 15px rgb(255, 255, 255);
+  }
+  .botonInicio{
+    position:sticky;
+    top:90%;
+    left:95%;
+    border: solid 2px white;
+    border-radius: 70%;
+    font-size: large;
+    font-weight: bold;
+    color: white;
+    box-shadow: 0 0 20px 5px rgb(255, 255, 255);
+    width: 50px;
+    height: 50px;
+    background-color: rgb(16, 143, 222);
+    transition: 0.5s;
+  }
+  .botonInicio:hover{
+    box-shadow: 0 0 23px 8px rgb(255, 255, 255);
+  }
+  .imgUp{
+    width: 20px;
+  }
+  button{
+    cursor: pointer;
   }
   
   .principio > span{
@@ -111,7 +153,7 @@ body {
     padding-top: 20px;
     padding-bottom: 20px;
     background-image: linear-gradient(to bottom right,rgb(143, 141, 141),rgb(90, 95, 96), rgb(60, 60, 65) );
-    margin: auto;
+    margin: 40px auto auto auto;
   }
   .myProgress {
       
@@ -163,15 +205,24 @@ body {
     width: 80%;
   }
   
-  @media only screen and (max-width: 950px) {
+  @media only screen and (max-width: 950px) { /*handheld no funciona*/
     .evoluciones{
       grid-template-columns: auto;
       width: 60%;
       min-width: 300px;
     }
-    .principio > span{/**/
-      margin: 0;
+    .principio > span{
+      margin: 20px;
       font-size: 50px;
+    }
+    .paginaPrincipal{
+      font-size: 12px;
+      width: 50px;
+      height: 50px;
+      top:23%;
+    }
+    .modooscuro{
+      width: 130px;
     }
   }
   @media only screen and (max-width: 1270px) {
@@ -239,17 +290,16 @@ body {
   
   .tipos{
     padding: 5px 20px 8px 20px;
-    font-weight: bold;
     border: solid 0;
     border-radius: 10px;
     margin: 0 10px 0 10px;
     text-align: center;
     color: white;
     border: 1px solid black;
-    -webkit-text-stroke: 0.6px rgb(0, 0, 0);
   }
   .normal{
     background-color:  rgb(221, 221, 221);
+    color: black;
   }
   .grass{
   background-color: rgb(45, 172, 45);;
@@ -271,6 +321,7 @@ body {
   }
   .electric{
   background-color: yellow;
+  color: black;
   }
   .ground{
   background-color: brown;
@@ -289,6 +340,7 @@ body {
   }
   .ice{
   background-color: aqua;
+  color: black;
   }
   .ghost{
   background-color: rgb(68, 8, 124);
@@ -297,3 +349,6 @@ body {
   background-color: rgb(3, 3, 138);
   }
   
+  .steel{
+    background-color: rgb(84, 84, 84);
+  }
