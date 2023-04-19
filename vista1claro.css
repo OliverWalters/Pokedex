@@ -3,10 +3,20 @@
 }
 
 body {
-  background-image: url("Recursos/Imgenes/fondo.png");
-  background-size: 1600px;
+  background-image: url("Recursos/Imgenes/fondo2.png");
+  background-size: 2000px;
   background-position:top;
   background-repeat: no-repeat;
+}
+
+@media (max-width: 1600px) {
+  body {
+    background-image: url("Recursos/Imgenes/fondo.png");
+    background-size: 1600px;
+    background-position:top;
+    background-repeat: no-repeat;
+  }
+
 }
 
 @font-face {
